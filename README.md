@@ -24,7 +24,7 @@
 
 9. Click on OK and then Click on Start Servers. Both Apache Server and MySQL Server will get started in a while.
 
-10. Copy all the code files(contacts folder in zip file) into the path C:\MAMP\htdocs.
+10. Copy all the code files(src folder) into the path C:\MAMP\htdocs.
 
 11. Used Server name : localhost, Username : root, Password : root, Database : contacts
 
@@ -34,6 +34,6 @@
 
 14. Create new database "Contacts"
 
-15. Press on Import and browse for the contacts.sql file provided in the zip folder and import the database.
+15. Press on Import and browse for the contacts.sql file provided and import the database.
 
 16. Open http://localhost/contacts/contacts.html from your browser.
