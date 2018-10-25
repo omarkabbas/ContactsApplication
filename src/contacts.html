@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Contacts</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="contacts.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100vh;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+
+    /*#contactsdiv{
+        height: auto;
+        padding: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding-bottom: 10px;
+        overflow: auto;
+    }
+
+    #detailsdiv{
+        overflow: hidden;
+
+    }*/
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="contacts.html"><img src="images/logo.png" alt="Logo" width="50" height="50" align="middle"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="contacts.html">Home</a></li>
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <!-- <li><a href="#"><span id="menuuser" class="glyphicon glyphicon-log-in"></span> Login</a></li> -->
+        <!-- <li>
+                <button type="button" id="menuuser" class="btn btn-primary dropdown-toggle btn-lg" data-toggle="dropdown" style="background-color: black;"> <span class="caret"></span></button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Account Details</a></li>
+                    <li><a href="signin.html">Logout</a></li>
+                </ul>
+        </li> -->
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+    <div class="col-sm-2 sidenav" style="background-color: black;">
+      
+      <!-- <p><button type="button" class="btn btn-info" style="background-color: black;" id="yourcontacts">Your Contacts</button></p> -->
+      <p><button type="button" class="btn btn-info" style="background-color: black;" id="addbtn"> Add Contact </button></p>
+    </div>
+
+    <div class="container-fluid text-center col-sm-4" style="height: 100vh; overflow-y: scroll;">
+  <div class="row content">
+    <div role="alert" id="message"></div>
+    <div class="col-sm-12 text-left" id="contactsdiv">
+
+      <h1>Your Contacts</h1>
+      <hr>
+      <form id="searchform" style="margin-top:10px;">
+            <input type="text" class="form-control" id="searchtext" placeholder="Search..." aria-label="Search">
+            </br>
+            <!-- <button type="button" class="btn btn-info" style="background-color: black;" id="searchbt">
+            <span class="glyphicon glyphicon-search"></span> Search
+            </button> -->
+        </form>
+      <table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Names</th>
+      
+    </tr>
+  </thead>
+  <tbody id="allcontacts">
+    <!-- <tr><td>shiva</td><td>chawala</td></tr> -->
+    
+  </tbody>
+</table>
+      
+        <!-- <figure style="float:left;">
+            <img src="Covers/Bhaag Milka Bhaag.jpg" id="1" class="img-fluid" alt="albumart1" style="width:130px; height:130px; margin-right: 1%; margin-bottom: 0.5em;">
+            <figcaption>Bhaag Milka Bhaag</figcaption>
+        </figure> -->
+      
+    </div>
+    
+
+</div>
+
+</div>
+
+<div class="col-sm-6 text-left" id="detailsdiv">
+
+      <h1>Contact Details</h1>
+      <hr>
+      <table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Contact Details</th>
+      
+    </tr>
+  </thead>
+  <tbody id="printall">
+    <tr id="printname">
+        <!-- <td><img src="images/shiva.jpg" class="img-circle" alt="contact img" width="70" height="70"/></td>
+        <td><h3>Shiva Chawala</h3></td> -->
+    </tr>
+    <tr>
+        <th>Number</th>
+        <td id="printnumber">
+            <!-- <table>
+              <tbody>
+                <tr>
+                  <th>Number Type: </th>
+                  <td><p><input type="text"></p></td>
+                </tr>
+                <tr>
+                  <th>Number: </th>
+                  <td><p><input type="text"></p></td>
+                </tr>
+              </tbody>
+            </table>
+            <table>
+              <tbody>
+                <th>India</th>
+                <tr>
+                  <td>7598854117</td>
+                </tr>
+              </tbody>
+            </table> -->
+        </td>
+    </tr>
+    <tr>
+        <th>Address</th>
+        <td id="printaddress">
+        <!-- <table>
+            <tbody>
+              <th>Home</th>
+                <tr>
+                  <tr>
+                    <th>Street Address: </th>
+                    <td> <p><input type="text" value=""></p></td>
+                  </tr>
+                  
+                  <tr>
+                    <th>City: </th>
+                    <td><p><input type="text" value=""></p></td>
+                  </tr>
+                  
+                    
+                  <tr>
+                    <th>State: </th>
+                    <td><p><input type="text" value=""></p></td>
+                  </tr>
+                  
+                  <tr>
+                    <th>Zipcode: </th>
+                    <td><p><input type="text" value=""></p></td>
+                    <td><button type="button" class="btn btn-light">Add</button></td>
+                  </tr>  
+                  
+                   
+                </tr>
+            </tbody>
+        </table> -->
+
+        <!-- <table>
+          <tbody>
+            <tr>
+              <td>Address Type: </td>
+              <td><input type="text" value=""></td>
+            </tr>
+            <tr>
+              <td>Street Address: </td>
+              <td><input type="text" value=""></td>
+            </tr>
+            <tr>
+              <td>City:  </td>
+              <td><input type="text" value=""></td>
+            </tr>
+            <tr>
+              <td>State:  </td>
+              <td><input type="text" value=""></td>
+            </tr>
+            <tr>
+              <td>Zip:  </td>
+              <td><input type="text" value=""></td>
+            </tr>
+            
+          </tbody>
+        </table></br> -->
+        </td>
+    </tr>
+    <tr>
+        <th>Important Dates</th>
+        <td id="printdate">
+        <!-- <table>
+            <tbody>
+              <tr>
+                <th>Date Type: </th>
+                <td><p> <input type="text"> </p></td>
+              </tr>
+              <tr>
+                <th>Date: </th>
+                <td><p> <input type="date"> </p></td>
+              </tr>
+            </tbody>
+        </table> -->
+        </td>
+    </tr>
+    <tr id="editbutton">
+        <!-- <td colspan="2" style="text-align: center;"><button id="edit" type="button" class="btn btn-primary">Edit</button></td> -->
+    </tr>
+
+    <tr id="add_address">
+      
+    </tr>
+    <tr id="add_number">
+      
+    </tr>
+    <tr id="add_imp_dates">
+      
+    </tr>
+    <tr id="add_update">
+      
+    </tr>
+    <tr id="delete">
+      
+    </tr>
+
+    
+  </tbody>
+</table>
+        <!-- <figure style="float:left;">
+            <img src="Covers/Bhaag Milka Bhaag.jpg" id="1" class="img-fluid" alt="albumart1" style="width:130px; height:130px; margin-right: 1%; margin-bottom: 0.5em;">
+            <figcaption>Bhaag Milka Bhaag</figcaption>
+        </figure> -->
+      
+    </div>
+
+
+
+
+</body>
+</html>
