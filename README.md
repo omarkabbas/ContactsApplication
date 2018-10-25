@@ -1,4 +1,4 @@
-# ContactsApplication
+# Contacts List Application
 
 1. The Contact List Application project works with a GUI interface.
 
